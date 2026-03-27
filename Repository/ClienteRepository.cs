@@ -14,8 +14,8 @@ namespace API_Cliente.Repository
         }
         public async Task<bool> inserir(Cliente cliente)
         {
-            var sql = @"INSERT INTO cliente (Id, Name, Email) 
-                VALUES (@Id, @Name, @Emai)";
+            var sql = @"INSERT INTO cliente (Name, Email) 
+                VALUES (@Name, @Email)";
             var linhaEfetuada = await _connection.ExecuteAsync(sql, cliente);
             return linhaEfetuada > 0;
         }
@@ -36,14 +36,14 @@ namespace API_Cliente.Repository
         }
         public async Task<List<Cliente>> buscar()
         {
-            var sql = "SELECT FROM cliente";
+            var sql = "SELECT * FROM cliente";
             var resultado = await _connection.QueryAsync<Cliente>(sql);
             return resultado.ToList();
         }
 
         public async Task<Cliente?> buscarPorId(int id)
         {
-            var sql = "SELECT FROM cliente WHERE Id = @Id";
+            var sql = "SELECT * FROM cliente WHERE Id = @Id";
             return await _connection.QueryFirstOrDefaultAsync<Cliente>(sql, new { id });
         }
     }
