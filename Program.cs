@@ -1,4 +1,9 @@
 
+using API_Cliente.Interface;
+using API_Cliente.Repository;
+using System.Data;
+using System.Data.SqlClient;
+
 namespace API_Cliente
 {
     public class Program
@@ -6,6 +11,16 @@ namespace API_Cliente
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // No Program.cs
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            // Registra a conexão para o repositório usar
+            builder.Services.AddScoped<IDbConnection>(sp =>
+                new SqlConnection(connectionString));
+
+            // Registra o seu repositório
+            builder.Services.AddScoped<ICliente, ClienteRepository>();
 
             // Add services to the container.
 

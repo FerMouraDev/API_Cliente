@@ -8,6 +8,6 @@ namespace API_Cliente.Interface
         Task<bool> alterar(Cliente cliente);
         Task<bool> deletar(Cliente cliente);
         Task<List<Cliente>> buscar();
-        Task<Cliente> buscarPorId(int id);
+        Task<Cliente?> buscarPorId(int id);
     }
 }
