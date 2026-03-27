@@ -26,7 +26,22 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddScoped<IDbConnection>(sp => new SqlConnection(connectionString));
 builder.Services.AddScoped<ICliente, ClienteRepository>();
 
+builder.Services.AddControllers()
+    .AddJsonOptions(options => {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Mantém PascalCase original
+    });
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirTudo",
+        policy => policy.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+});
+
 var app = builder.Build();
+
+app.UseCors("PermitirTudo");
 
 // 4. Configuração do Pipeline (Middleware)
 if (app.Environment.IsDevelopment())
