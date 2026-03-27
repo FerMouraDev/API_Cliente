@@ -36,15 +36,26 @@ namespace API_Cliente.Repository
         }
         public async Task<List<Cliente>> buscar()
         {
-            var sql = "SELECT * FROM cliente";
-            var resultado = await _connection.QueryAsync<Cliente>(sql);
+            // O nome aqui deve ser exatamente o nome que você deu no SQL
+            var procedureName = "sp_GetClientes";
+
+            var resultado = await _connection.QueryAsync<Cliente>(
+                procedureName,
+                commandType: CommandType.StoredProcedure
+            );
+
             return resultado.ToList();
         }
 
         public async Task<Cliente?> buscarPorId(int id)
         {
-            var sql = "SELECT * FROM cliente WHERE Id = @Id";
-            return await _connection.QueryFirstOrDefaultAsync<Cliente>(sql, new { id });
+            var procedureName = "sp_GetClientePorId";
+
+            return await _connection.QueryFirstOrDefaultAsync<Cliente>(
+                procedureName,
+                new { Id = id }, // O Dapper liga o 'Id' do C# ao '@Id' da Procedure
+                commandType: CommandType.StoredProcedure
+            );
         }
     }
 }
