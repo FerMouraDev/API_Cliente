@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hpoK8LhxSac=",
+  "dgSpecHash": "iRRU4wgYiYU=",
   "success": true,
-  "projectFilePath": "C:\\dev\\c#\\API_Cliente\\API_Cliente.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\dev\\github\\API_Cliente\\API_Cliente.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\FernandoMouraDev\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.5\\microsoft.aspnetcore.openapi.10.0.5.nupkg.sha512"
+  ],
   "logs": []
 }

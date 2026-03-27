@@ -1,0 +1,6 @@
+C:\dev\github\API_Cliente\obj\Debug\net8.0\API_Cliente.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\github\API_Cliente\obj\Debug\net8.0\API_Cliente.AssemblyInfoInputs.cache
+C:\dev\github\API_Cliente\obj\Debug\net8.0\API_Cliente.AssemblyInfo.cs
+C:\dev\github\API_Cliente\obj\Debug\net8.0\API_Cliente.csproj.CoreCompileInputs.cache
+C:\dev\github\API_Cliente\obj\Debug\net8.0\API_Cliente.MvcApplicationPartsAssemblyInfo.cache
+C:\dev\github\API_Cliente\obj\Debug\net8.0\API_Cliente.sourcelink.json
