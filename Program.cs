@@ -60,3 +60,17 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+//1.Camada de Segurança(Autenticação e Autorização)
+
+//2.Validações e Tratamento de Erros (Resiliência)
+
+//3. Melhoria na Arquitetura (Clean Code)
+
+//4. Deploy (Colocar no Ar)
+
+//5. Testes Unitários
+
+//6. Relatórios e Dashboard
+
+// Teste Jira
